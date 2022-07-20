@@ -25,7 +25,7 @@ while True:
         if not isinstance(int(part), int):
             ipv4_add_check = False
     if ipv4_add_check:
-        print("{} is valid a IPv4 address".format(IPv4address))
+        print("{} is a valid IPv4 address".format(IPv4address))
         print('')
     else:
         print("{} is not a valid IPv4 address".format(IPv4address))
