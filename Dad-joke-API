@@ -1,0 +1,22 @@
+#
+'''
+This program run the Dad-Jock using API
+Arfan Mir
+'''
+import requests
+
+url = "https://icanhazdadjoke.com/"
+jock={}
+headers = { 'Accept': 'text/plain' }
+
+userinput = input(' 1. Type a subject for a dad joke.\n\n 2. Press Enter to get a random joke. \n\n')
+
+if userinput == '':
+    response = requests.request("GET", url, headers=headers, data=jock)
+    print(response.text,'\n')
+else:
+    response = requests.request("GET", url+'/search?term='+userinput, headers=headers, data=jock)
+    print('\n',response.text)
+if response.text=='':
+    print('\n Sorry, there are no dad jokes about', '"',userinput,'"')
+
